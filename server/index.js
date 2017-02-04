@@ -1,8 +1,13 @@
 // Importing Node modules and initializing Express
 const express = require('express'),
   app = express(),
+  bodyParser = require('body-parser'),
   logger = require('morgan'),
+  mongoose = require('mongoose'),
   config = require('./config/main');
+
+// Database connection
+mongoose.connect(config.database);
 
 // Start the server
 const server = app.listen(config.port);
