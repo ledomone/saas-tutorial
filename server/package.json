@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/ledomone/saas-tutorial/issues"
   },
-  "homepage": "https://github.com/ledomone/saas-tutorial#readme"
+  "homepage": "https://github.com/ledomone/saas-tutorial#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "morgan": "^1.7.0"
+  }
 }
