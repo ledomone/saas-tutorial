@@ -16,6 +16,10 @@ console.log('Your server is running on port ' + config.port + '.');
 // Setting up basic middleware for all Express requests
 app.use(logger('dev')); // Log requests to API using morgan
 
+// bodyParser - parse bodies to JSON and expose object in req.body (for endpoints)
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // Enable CORS from client-side
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
