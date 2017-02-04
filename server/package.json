@@ -1,0 +1,27 @@
+{
+  "name": "saas-server",
+  "version": "1.0.0",
+  "description": "Saas tutorial - server-side",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ledomone/saas-tutorial.git"
+  },
+  "keywords": [
+    "saas",
+    "authenticate",
+    "node",
+    "jwt",
+    "api",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ledomone/saas-tutorial/issues"
+  },
+  "homepage": "https://github.com/ledomone/saas-tutorial#readme"
+}
