@@ -6,7 +6,7 @@ import { Router, browserHistory } from 'react-router';
 import reduxThunk from 'redux-thunk';
 import routes from './routes';
 import reducers from './reducers/index';
-// import { AUTH_USER } from './actions/types';
+import { AUTH_USER } from './actions/types';
 
 // Import stylesheets like this, if you choose: import './public/stylesheets/base.scss';
 
