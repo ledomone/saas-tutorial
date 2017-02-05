@@ -61,6 +61,7 @@ export function logoutUser() {
   return function(dispatch) {
     dispatch({ type: UNAUTH_USER });
     cookie.remove('token', { path: '/' });
+    cookie.remove('user', { path: '/' });
 
     window.location.href = CLIENT_ROOT_URL + '/login';
   }
