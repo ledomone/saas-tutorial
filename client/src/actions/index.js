@@ -31,6 +31,7 @@ export function loginUser({ email, password }) {
     axios.post(`${API_URL}/auth/login`, { email, password })
     .then(response => {
       cookie.save('token', response.data.token, { path: '/' });
+      cookie.save('user', response.data.user, { path: '/' });
       dispatch({ type: AUTH_USER });
       window.location.href = CLIENT_ROOT_URL + '/dashboard';
     })
@@ -45,6 +46,7 @@ export function registerUser({ email, firstName, lastName, password }) {
     axios.post(`${API_URL}/auth/register`, { email, firstName, lastName, password })
     .then(response => {
       cookie.save('token', response.data.token, { path: '/' });
+      cookie.save('user', response.data.user, { path: '/' });
       dispatch({ type: AUTH_USER });
       window.location.href = CLIENT_ROOT_URL + '/dashboard';
     })
@@ -66,9 +68,9 @@ export function logoutUser() {
 export function protectedTest() {
   return function(dispatch) {
     axios.get(`${API_URL}/protected`, {
-      headers: { 'Authorization': cookie.load('token') }
+      headers: { Authorization: cookie.load('token') }
     })
-    .then(response => {
+    .then((response) => {
       dispatch({
         type: PROTECTED_TEST,
         payload: response.data.content
