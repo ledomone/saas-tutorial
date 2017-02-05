@@ -6,7 +6,7 @@ import NotFoundPage from './components/pages/not-found-page';
 
 import HomePage from './components/pages/home-page';
 import Register from './components/auth/register';
-// import Login from './components/auth/login';
+import Login from './components/auth/login';
 import Dashboard from './components/dashboard';
 // import RequiredAuth from './components/auth/require-auth';
 
