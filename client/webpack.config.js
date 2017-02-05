@@ -12,7 +12,7 @@ const config = {
     loaders: [{
       exclude: /node_modules/,
       test: /\.(js|jsx)$/,
-      loader: 'babel'
+      loader: 'babel-loader'
     },
     {
       test: /\.scss$/,
@@ -26,7 +26,6 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({ 'process.env':{ 'NODE_ENV': JSON.stringify('production') } }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
