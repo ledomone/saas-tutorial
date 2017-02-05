@@ -36,7 +36,8 @@ const config = {
       minimize: true,
       mangle: { except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad'] }
     }),
-    new ExtractTextPlugin('src/public/stylesheets/app.css', {
+    new ExtractTextPlugin({
+      filename: 'src/public/stylesheets/app.css',
       allChunks: true
     })
   ]
