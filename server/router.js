@@ -33,6 +33,15 @@ module.exports = function(app) {
   // Login route
   authRoutes.post('/login', requireLogin, AuthenticationController.login);
 
+  //=========================
+  // User Routes
+  //=========================
+
+  // Test protected route
+  apiRoutes.get('/protected', requireAuth, (req, res) => {
+    res.send({ content: 'The protected test route is functional!' });
+  });
+
   //=================================
   // Chat Routes
   //=================================
