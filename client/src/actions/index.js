@@ -6,7 +6,8 @@ import { AUTH_USER,
          UNAUTH_USER,
          PROTECTED_TEST } from './types';
 
-const API_URL = 'http://localhost:3000/api';
+export const API_URL = 'http://localhost:3000/api';
+export const CLIENT_ROOT_URL = 'http://localhost:8080';
 
 export function errorHandler(dispatch, error, type) {
   console.log('Error type: ', type);
