@@ -9,28 +9,21 @@ import { AUTH_USER,
 const API_URL = 'http://localhost:3000/api';
 
 export function errorHandler(dispatch, error, type) {
-  let errorMessage = '';
+  console.log('Error type: ', type);
+  console.log(error);
 
-  if (error.data.error) {
-    errorMessage = error.data.error;
-  } else if (error.data) {
-    errorMessage = error.data;
-  } else {
-    errorMessage = error;
+  let errorMessage = error.response ? error.response.data : error;
+
+  // NOT AUTHENTICATED ERROR
+  if (error.status === 401 || error.response.status === 401) {
+    errorMessage = 'You are not authorized to do this.';
+    return dispatch(logoutUser(errorMessage));
   }
 
-  if (error.status === 401) {
-    dispatch({
-      type: type,
-      payload: 'You are not authorized to do this. Please login and try again.'
-    });
-    logoutUser();
-  } else {
-    dispatch({
-      type: type,
-      payload: errorMessage
-    });
-  }
+  dispatch({
+    type,
+    payload: errorMessage,
+  });
 }
 
 export function loginUser({ email, password }) {
